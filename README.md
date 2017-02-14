@@ -31,7 +31,7 @@ Any dependency that you need you can put in this file, It will help when exporti
 Here, we have all tests that we need for testing our api(POST, GET, PUT and DELETE).</br>
 In this project i am testing a API that i have created and you can see here: https://github.com/nathsilv/api-node</br>
 This api is about series and it is simple!</br>
-For you testing this project, you will need the API, so downloading that api-node project too! and Enjoy!
+For you test this project, you will need the API, so downloading that api-node project too! and Enjoy!
 
 # How to run my tests?
 
