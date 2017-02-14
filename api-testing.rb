@@ -6,7 +6,7 @@ class TestAPI
 end
 
 initial_serie = {
-  "genre" => "Acao",
+  "genre" => "Action",
   "season" => "5",
   "year" => "2012",
   "name" => "Arrow"
