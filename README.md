@@ -37,7 +37,8 @@ For you test this project, you will need the API, so downloading that api-node p
 
 First, up your API server(In my api-node project in my github i show how to up the server if you don't know it)</br>
 Then, in the project directory execute: </br>
-* rspec api-testing.rb</br>
+* rspec api-testing.rb</br></br>
+
 Simple, Isn't It?</br>
 
 Any doubt you have, you can contact me and let's go to talk about it!</br>
