@@ -33,7 +33,7 @@ In this project i am testing a API that i have created and you can see here: htt
 This api is about series and it is simple!</br>
 For you test this project, you will need the API, so downloading that api-node project too! and Enjoy!
 
-# How to run my tests?
+# How to run the tests?
 
 First, up your API server(In my api-node project in my github i show how to up the server if you don't know it)</br>
 Then, in the project directory execute: </br>
