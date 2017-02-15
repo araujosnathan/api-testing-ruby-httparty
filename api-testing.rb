@@ -147,7 +147,7 @@ RSpec.describe 'API Testing - DELETE' do
 
   it 'Should to return HttpStatus 404 - NOT FOUND' do
     begin
-      response = TestAPI.get('/series/notExist')
+      response = TestAPI.delete('/series/notExist')
       expect(response.code).to eql(404)
       expect(response['message']).to eql('Not Found')
     end
