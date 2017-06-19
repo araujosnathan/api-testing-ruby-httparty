@@ -2,7 +2,7 @@ require "httparty"
 
 class TestAPI
   include HTTParty
-  base_uri 'http://localhost:3000/api'
+  base_uri 'http://localhost:9000/api'
 end
 
 initial_serie = {
@@ -78,6 +78,9 @@ RSpec.describe 'API Testing  - POST' do
     begin
       response = TestAPI.post('/series', body: new_serie);
       expect(response.code).to eql(201)
+
+      meuID = response['_id']
+      response = TestAPI.get('/series/' + meuID)
       expect(response['name']).to eql(new_serie['name'])
       expect(response['year']).to eql(new_serie['year'])
       expect(response['season']).to eql(new_serie['season'])
@@ -110,15 +113,21 @@ end
 
 RSpec.describe 'API Testing - PUT' do
   it 'Should update a serie' do
-    new_serie = {
+    updated_serie = {
       'name' => 'Game of Thrones',
       'year' => '2011',
       'season' => '7',
       'genre' => 'Drama'
     }
     begin
-      response = TestAPI.put('/series/' + response_global["_id"])
+      response = TestAPI.put('/series/' + response_global["_id"], body: updated_serie)
       expect(response.code).to eql(204)
+
+      response = TestAPI.get('/series/' + response_global["_id"])
+      expect(response['name']).to eql(updated_serie['name'])
+      expect(response['year']).to eql(updated_serie['year'])
+      expect(response['season']).to eql(updated_serie['season'])
+      expect(response['genre']).to eql(updated_serie['genre'])
     end
   end
 
