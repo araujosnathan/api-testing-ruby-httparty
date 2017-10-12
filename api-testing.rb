@@ -2,7 +2,7 @@ require "httparty"
 
 class TestAPI
   include HTTParty
-  base_uri 'http://localhost:5000/api'
+  base_uri 'http://localhost:3000/api'
 end
 
 initial_serie = {
