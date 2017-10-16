@@ -1,6 +1,6 @@
 # api-testing-ruby-httparty
 
-Hey,
+Hey
 
 Let's go to create a simple project for API Testing. </br>
 First of all, you have downloading/clone this project for your PC and to install all dependencies. Okay?
