@@ -5,16 +5,6 @@ class TestAPI
   base_uri 'http://localhost:3000/api'
 end
 
-initial_serie = {
-  "genre" => "Action",
-  "season" => "5",
-  "year" => "2012",
-  "name" => "Arrow"
-}
-response_global = TestAPI.post('/series', body: initial_serie)
-
-
-
 RSpec.describe 'API Testing  - POST' do
   it 'It is not possible create serie without name' do
     new_serie = {
@@ -93,7 +83,7 @@ RSpec.describe 'API Testing  - GET' do
   it 'Should to return a serie' do
 
     begin
-      response = TestAPI.get('/series/' + response_global["_id"])
+      response = TestAPI.get('/series/77e0373c6f35bd826f47e977')
       expect(response.code).to eql(200)
       expect(response['name']).to eql(initial_serie['name'])
       expect(response['year']).to eql(initial_serie['year'])
@@ -120,7 +110,7 @@ RSpec.describe 'API Testing - PUT' do
       'genre' => 'Drama'
     }
     begin
-      response = TestAPI.put('/series/' + response_global["_id"], body: updated_serie)
+      response = TestAPI.put('/series/77e0373c6f35bd826f47e977', body: updated_serie)
       expect(response.code).to eql(204)
 
       response = TestAPI.get('/series/' + response_global["_id"])
@@ -149,7 +139,7 @@ end
 RSpec.describe 'API Testing - DELETE' do
   it 'Should delete a serie' do
     begin
-      response = TestAPI.delete('/series/' + response_global["_id"])
+      response = TestAPI.delete('/series/77e0373c6f35bd826f47e977')
       expect(response.code).to eql(204)
     end
   end
