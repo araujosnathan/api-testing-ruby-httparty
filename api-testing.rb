@@ -85,10 +85,10 @@ RSpec.describe 'API Testing  - GET' do
     begin
       response = TestAPI.get('/series/77e0373c6f35bd826f47e977')
       expect(response.code).to eql(200)
-      expect(response['name']).to eql(initial_serie['name'])
-      expect(response['year']).to eql(initial_serie['year'])
-      expect(response['season']).to eql(initial_serie['season'])
-      expect(response['genre']).to eql(initial_serie['genre'])
+      expect(response['name']).to eql("The Flash")
+      expect(response['year']).to eql("2014")
+      expect(response['season']).to eql("4")
+      expect(response['genre']).to eql("action")
     end
   end
 
@@ -113,7 +113,7 @@ RSpec.describe 'API Testing - PUT' do
       response = TestAPI.put('/series/77e0373c6f35bd826f47e977', body: updated_serie)
       expect(response.code).to eql(204)
 
-      response = TestAPI.get('/series/' + response_global["_id"])
+      response = TestAPI.get('/series/77e0373c6f35bd826f47e977')
       expect(response['name']).to eql(updated_serie['name'])
       expect(response['year']).to eql(updated_serie['year'])
       expect(response['season']).to eql(updated_serie['season'])
