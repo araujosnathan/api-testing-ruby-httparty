@@ -2,7 +2,7 @@ require "httparty"
 
 class TestAPI
   include HTTParty
-  base_uri 'http://localhost:9000/api'
+  base_uri 'http://localhost:3000/api'
 end
 
 RSpec.describe 'API Testing  - POST' do
